@@ -117,7 +117,7 @@ def main():
                     st.success("✅ Transcript fetched successfully!")
                     st.text_area("Transcript:", transcript, height=300)
                 except Exception as e:
-                    st.error("⚠️ Cannot retrieve subtitles. Please check the language and try again.")
+                    st.error(f"⚠️ Cannot retrieve subtitles. Please check the language and try again. {e}")
             else:
                 st.error("⚠️ Please enter a YouTube URL.")
     
