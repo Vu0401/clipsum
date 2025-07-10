@@ -14,7 +14,7 @@ def get_image_as_base64(image_path):
             return base64.b64encode(img_file.read()).decode()
     return None
 
-def get_transcript_with_retry(video_id, lang, retries=5, delay=5):
+def get_transcript_with_retry(video_id, lang, retries=3, delay=3):
     for attempt in range(retries):
         try:
             print("attempt", attempt)
@@ -25,7 +25,7 @@ def get_transcript_with_retry(video_id, lang, retries=5, delay=5):
             else:
                 raise e
 
-def youtube_summarize_with_retry(text, retries=5, delay=5):
+def youtube_summarize_with_retry(text, retries=3, delay=3):
     for attempt in range(retries):
         try:
             return youtube_summarize(text)
@@ -35,7 +35,7 @@ def youtube_summarize_with_retry(text, retries=5, delay=5):
             else:
                 raise e
 
-def youtube_summarize_ordered_with_retry(text, retries=5, delay=5):  # New function for ordered summary
+def youtube_summarize_ordered_with_retry(text, retries=3, delay=3):  # New function for ordered summary
     for attempt in range(retries):
         try:
             return youtube_summarize_ordered(text)
