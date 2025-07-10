@@ -144,7 +144,7 @@ def main():
                     )
                     st.session_state["history"].append(result)
                 except Exception as e:
-                    st.error("⚠️ Cannot retrieve subtitles. Please check the language and try again.")
+                    st.error(f"⚠️ Cannot retrieve subtitles. Please check the language and try again. {e}")
             else:
                 st.error("⚠️ Please enter a YouTube URL.")
 
